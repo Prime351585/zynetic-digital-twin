@@ -1,10 +1,24 @@
 ## Getting Started
 
 First, run the development server:
-The Project is live at click on the link ""
+The Project is live at click on the link "[text](https://zynetic-digital-twin.vercel.app/)"
+
+## Approach
 The design approach was to break teh components in chunks and create them one by one, due to time constraint the dashboard is not responsive to tab and mobile but can be made responsive.
+
+Used Zustand to create a global Shared Status State and read from it.
+Used the svg icons provided in the Figma file and Font Exo2
+
 Spent a total of 9 hours 4+5
-Assuming the API structure of Charger Status looks like following with all the details in it, since all the components are reactive to these values
+
+The API response is served via a cloudflare worker deployed on https://backend.p6460923.workers.dev, there are necessary POST and GET endpoints as follows
+
+GET '/charger/:id/status'
+POST '/charger/:id/diagnose'
+GET '/charger/:id/notifications'
+
+## Assumptions
+Assuming the API structure of Charger Status looks like following with all the details in it, since all the components are reactive to these values.
 
 {
     status: 'offline',
